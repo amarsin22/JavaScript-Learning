@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body style="background-color:black; color:aliceblue;">
+  <h2>Amazing images</h2>
+  <div>
+    <ul id="images">
+      <li><img width="200px" src="img1.jpg" alt="photoshop" id="photo1"></li>
+      <li><img width="200px" src="img2.jpg" alt="" id="photo2"></li>
+      <li><img width="200px" src="img3.jpg" alt="" id="photo3"></li>
+      <li><img width="200px" src="img4.jpg" alt="" id="photo4"></li>
+      <li><a style="color: aliceblue;" href="https://www.google.com" id="=google">Google</a></li>
+    </ul>
+  </div>
+</body>
+<script>
+  // document.getElementById('photo3').onclick = function(){
+    //alert("owl clicked")
+ // }
+
+ //document.getElementById('photo4').addEventListener('click', function(){
+  //alert('all clicked again')
+ //})
+
+ //Notes:
+ //attachEvent()
+ // jQuery -onEventListener
+
+  //types, timestamp, defaultPrevented, 
+ // target, toElement, srcElement, currentTarget,
+ // clientX, clientY, screenX, screenY
+ //altkey ,ctrlkey, shiftkey, keyCode
+
+
+ //Event Propogation 
+
+// document.getElementById('images').addEventListener('click', function(e){
+  //console.log("clicked inside the ul")
+ //},false)     //true->capturing , false->bubbling -
+
+// document.getElementById('photo2').addEventListener('click', function(e){
+  //console.log(" photo2 clicked ")
+  //e.stopPropagation()
+ //},false)
+//document.getElementById('#google').addEventListener
+// ('click',function(e){
+//  e.preventDefault()
+//  e.stopPropagation()
+//  console.log("google clicked")
+//})
+
+document.querySelector('#images').addEventListener
+('click', function(e){
+ //console.log(e.target.parentNode);
+ console.log(e.target.tagName);
+ if(e.target.tagName === 'IMG'){
+  console.log(e.target.id)
+
+
+  let removeIt =e.target.parentNode
+  removeIt.remove()
+  //removeIt.parentNode.removeChild(removeIt)
+}
+
+
+})
+</script>
+</html>
